@@ -1,0 +1,21 @@
+通过一段时间的学习，发现面对对象进行编程是python程序的重点，包括自动化也不例外，在本篇中会讲述一些自动化的模块处理。
+在selenium会有很多单元测试框架，例如：doctest、unittest、pytest、nose等。
+在unittest中需要导入unittest模块，所需要的文件目前所认识为三种：1、测试用例文件2、测试文件（用例执行用例）3、总执行文件（执行套件起始）。
+测试用例文件比较简单，通常就是用例所执行步骤与返回值，例如下：
+class A():
+    def __init__(self,a,b):
+        self.a = a
+        self.b = b
+    ''' 该处定义a，b可以在之后的函数中直接引用，并且函数也以此方式进行引用，self.__'''
+    def add(self):
+        returen self.a + self.b
+一个简单的测试用例就写完了
+接下来是测试文件，该文件会引用unittest模块来进行测试，比较重要的就是断言部分
+import unittest
+from A1 import A
+class B(unittest.TestCase):
+    def test1(self):
+        x = A(2,3)
+        self.assertEqual(x,5)
+if __name__ == '__main__':
+    unittest.main()
